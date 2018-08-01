@@ -48,13 +48,13 @@ class ActivityTableViewController: UITableViewController {
     }
     
 
-    /*
+    
     // Override to support conditional editing of the table view.
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
-    */
+    
 
     /*
     // Override to support editing the table view.
@@ -92,5 +92,9 @@ class ActivityTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func unwindToActivityTable (segue: UIStoryboardSegue) {
+        tableView.reloadData()
+    }
 
 }

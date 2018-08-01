@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -41,11 +42,70 @@
                             <outlet property="delegate" destination="XwX-sk-x5P" id="lHd-At-g7K"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Activities" id="SMf-kV-OZa"/>
+                    <navigationItem key="navigationItem" title="Activities" id="SMf-kV-OZa">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="64j-B7-L3s">
+                            <connections>
+                                <segue destination="1KA-qO-GF8" kind="presentation" id="Zx2-oA-h6i"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Is-7w-Y2e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1814" y="121"/>
+        </scene>
+        <!--New Activity-->
+        <scene sceneID="oEp-9E-CK7">
+            <objects>
+                <viewController id="oyf-vn-3QS" customClass="NewActivityViewController" customModule="Activity_Timekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qQ0-DJ-RxS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zvr-Sv-bcf">
+                                <rect key="frame" x="0.0" y="101" width="375" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbW-te-uBe">
+                                <rect key="frame" x="0.0" y="72" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="u0G-qe-7pR" firstAttribute="trailing" secondItem="Zvr-Sv-bcf" secondAttribute="trailing" id="HEx-hL-iap"/>
+                            <constraint firstItem="Zvr-Sv-bcf" firstAttribute="leading" secondItem="u0G-qe-7pR" secondAttribute="leading" id="R66-tZ-oTO"/>
+                            <constraint firstItem="TbW-te-uBe" firstAttribute="leading" secondItem="u0G-qe-7pR" secondAttribute="leading" id="dD0-iJ-FAa"/>
+                            <constraint firstItem="u0G-qe-7pR" firstAttribute="trailing" secondItem="TbW-te-uBe" secondAttribute="trailing" id="gIv-gV-CA0"/>
+                            <constraint firstItem="TbW-te-uBe" firstAttribute="top" secondItem="u0G-qe-7pR" secondAttribute="top" constant="8" id="kEB-T0-MTR"/>
+                            <constraint firstItem="Zvr-Sv-bcf" firstAttribute="top" secondItem="TbW-te-uBe" secondAttribute="bottom" constant="8" id="tqm-fH-bcm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="u0G-qe-7pR"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="New Activity" id="otV-GI-uwE">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="Z9u-Uw-eo4">
+                            <connections>
+                                <segue destination="h9Y-rC-IYc" kind="unwind" identifier="cancelUnwindSegue" unwindAction="unwindToActivityTableWithSegue:" id="Zcd-eK-LD6"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="5KX-Th-Zn7">
+                            <connections>
+                                <segue destination="h9Y-rC-IYc" kind="unwind" identifier="saveUnwindSegue" unwindAction="unwindToActivityTableWithSegue:" id="yfc-M2-WmK"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="nameTextField" destination="Zvr-Sv-bcf" id="b7X-2G-4eE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hOi-Kg-dm2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="h9Y-rC-IYc" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="3580" y="-251.42428785607197"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ufa-n0-VpF">
@@ -62,6 +122,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3NH-9d-FvW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="860" y="121"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="S87-8b-rs0">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="1KA-qO-GF8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="9B5-Oh-ebE">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oyf-vn-3QS" kind="relationship" relationship="rootViewController" id="45r-FN-b8I"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agX-fT-4pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2640.8000000000002" y="-251.42428785607197"/>
         </scene>
     </scenes>
 </document>
