@@ -14,8 +14,10 @@ struct Session {
     var pausePeriods = [(Date, Date)]()
     var notes: String
     
-    var lengthInMinutes: Double {
+    var lengthInSeconds: Double {
         let timeDifference = endTime.timeIntervalSince(startTime)
-        return timeDifference
+        let pauseLengths = pausePeriods.map {$0.1.timeIntervalSince($0.0)}
+        let sessionLength = timeDifference - pauseLengths.reduce(0) {$0 + $1}
+        return sessionLength
     }
 }

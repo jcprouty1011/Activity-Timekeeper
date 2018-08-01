@@ -11,4 +11,6 @@ import Foundation
 struct Activity {
     var name: String
     var sessionList: [Session]
+    
+    static let sampleActivities = [Activity(name: "Running", sessionList: []), Activity(name: "Meditation", sessionList: [])]
 }
