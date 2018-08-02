@@ -14,7 +14,11 @@ class ActivityTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        activities = Activity.sampleActivities
+        if let activities = DataManager.shared.loadActivities() {
+            self.activities = activities
+        } else {
+            self.activities = Activity.sampleActivities
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -63,6 +67,7 @@ class ActivityTableViewController: UITableViewController {
             // Delete the row from the data source
             activities.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            DataManager.shared.saveActivities(activities: activities)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
@@ -100,6 +105,7 @@ class ActivityTableViewController: UITableViewController {
     
     @IBAction func unwindToActivityTable (segue: UIStoryboardSegue) {
         tableView.reloadData()
+        DataManager.shared.saveActivities(activities: activities)
     }
 
 }

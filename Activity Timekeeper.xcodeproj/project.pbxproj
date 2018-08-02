@@ -17,6 +17,7 @@
 		31B2407D2112369D00596B89 /* ActivityTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2407C2112369D00596B89 /* ActivityTableViewController.swift */; };
 		31B2407F211238FF00596B89 /* NewActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2407E211238FF00596B89 /* NewActivityViewController.swift */; };
 		31B2408121123F8500596B89 /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2408021123F8500596B89 /* ActivityDetailViewController.swift */; };
+		31B24083211390FF00596B89 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B24082211390FF00596B89 /* DataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		31B2407C2112369D00596B89 /* ActivityTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityTableViewController.swift; sourceTree = "<group>"; };
 		31B2407E211238FF00596B89 /* NewActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewActivityViewController.swift; sourceTree = "<group>"; };
 		31B2408021123F8500596B89 /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
+		31B24082211390FF00596B89 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 				31B2408021123F8500596B89 /* ActivityDetailViewController.swift */,
 				31B2407E211238FF00596B89 /* NewActivityViewController.swift */,
 				31B2407821122E0D00596B89 /* Activity.swift */,
+				31B24082211390FF00596B89 /* DataManager.swift */,
 				31B2407A21122E4C00596B89 /* Session.swift */,
 				31B2406D211226D000596B89 /* Assets.xcassets */,
 				31B2406F211226D000596B89 /* LaunchScreen.storyboard */,
@@ -151,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				31B2407B21122E4C00596B89 /* Session.swift in Sources */,
+				31B24083211390FF00596B89 /* DataManager.swift in Sources */,
 				31B2407D2112369D00596B89 /* ActivityTableViewController.swift in Sources */,
 				31B2408121123F8500596B89 /* ActivityDetailViewController.swift in Sources */,
 				31B2407F211238FF00596B89 /* NewActivityViewController.swift in Sources */,
