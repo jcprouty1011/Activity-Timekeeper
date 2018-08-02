@@ -35,6 +35,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="DLm-14-4zb" kind="show" identifier="ActivityDetailSegue" id="4RZ-Zh-caM"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -140,6 +143,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="agX-fT-4pn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2640.8000000000002" y="-251.42428785607197"/>
+        </scene>
+        <!--Activity Information-->
+        <scene sceneID="cdl-j0-1fu">
+            <objects>
+                <viewController id="DLm-14-4zb" customClass="ActivityDetailViewController" customModule="Activity_Timekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lec-ht-PNn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ActivityLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uT3-l0-ZaU">
+                                <rect key="frame" x="0.0" y="72" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uT3-l0-ZaU" firstAttribute="top" secondItem="LsX-3s-00J" secondAttribute="top" constant="8" id="AoC-bH-E9c"/>
+                            <constraint firstItem="uT3-l0-ZaU" firstAttribute="leading" secondItem="LsX-3s-00J" secondAttribute="leading" id="Hf5-PF-Fl5"/>
+                            <constraint firstItem="LsX-3s-00J" firstAttribute="trailing" secondItem="uT3-l0-ZaU" secondAttribute="trailing" id="Qcx-Jv-IsJ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="LsX-3s-00J"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Activity Information" id="z9g-PI-mkt"/>
+                    <connections>
+                        <outlet property="activityLabel" destination="uT3-l0-ZaU" id="Eax-MO-Hkm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fAv-7S-Ez5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="493"/>
         </scene>
     </scenes>
 </document>
