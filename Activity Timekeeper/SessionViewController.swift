@@ -16,7 +16,7 @@ class SessionViewController: UIViewController {
     var startTime: Date!
     var endTime: Date!
     var pausedAt: Date!
-    var pauseTimes: [(Date, Date)] = []
+    var pauseTimes: [DatePair] = []
     var totalPauseTime: TimeInterval = 0
 
     @IBOutlet weak var activityLabel: UILabel!
@@ -46,7 +46,7 @@ class SessionViewController: UIViewController {
                 saveSessionButton.isEnabled = true
             } else {
                 let resumedAt = Date()
-                pauseTimes.append((resumedAt, pausedAt))
+                pauseTimes.append(DatePair(start: pausedAt, end: resumedAt))
                 totalPauseTime += resumedAt.timeIntervalSince(pausedAt)
             }
             timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: {(timer) in
@@ -84,6 +84,7 @@ class SessionViewController: UIViewController {
             self.endTime = self.pausedAt
             let session = Session(startTime: self.startTime, endTime: self.endTime, pausePeriods: self.pauseTimes, notes: "")
             self.activity.sessionList.append(session)
+            DataManager.shared.saveActivities()
             self.performSegue(withIdentifier: "SessionToActivityDetail", sender: nil)
         } ))
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))

@@ -33,8 +33,7 @@ class NewActivityViewController: UIViewController {
         // Pass the selected object to the new view controller.
         if segue.identifier == "saveUnwindSegue" {
             let newActivity = Activity(name: nameTextField.text!, sessionList: [])
-            let activityTableViewController = segue.destination as! ActivityTableViewController
-            activityTableViewController.activities.append(newActivity)
+            DataManager.shared.activities.append(newActivity)
         }
     }
     

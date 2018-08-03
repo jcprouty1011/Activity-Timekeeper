@@ -11,6 +11,7 @@ import UIKit
 class ActivityDetailViewController: UIViewController {
     
     var activity: Activity!
+    var sessionTableViewController: SessionTableViewController!
     @IBOutlet weak var activityLabel: UILabel!
     
     override func viewDidLoad() {
@@ -36,11 +37,16 @@ class ActivityDetailViewController: UIViewController {
         if segue.identifier == "ActivityDetailToSessionSegue" {
             let sessionViewController = segue.destination as! SessionViewController
             sessionViewController.activity = activity
+        } else if segue.identifier == "EmbedSessionTable" {
+            let sessionTableViewController = segue.destination as! SessionTableViewController
+            sessionTableViewController.sessions = activity.sessionList
+            self.sessionTableViewController = sessionTableViewController
         }
     }
     
     @IBAction func unwindToActivityDetail(segue: UIStoryboardSegue) {
-        
+        sessionTableViewController.sessions = activity.sessionList
+        sessionTableViewController.tableView.reloadData()
     }
  
 

@@ -165,6 +165,13 @@
                                     <segue destination="UzB-XU-9HG" kind="presentation" identifier="ActivityDetailToSessionSegue" id="LsN-PS-IWM"/>
                                 </connections>
                             </button>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-Mo-eok">
+                                <rect key="frame" x="67" y="101" width="240" height="329"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="T14-9o-uFd" kind="embed" identifier="EmbedSessionTable" id="5Ks-Ga-u8t"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -184,7 +191,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAv-7S-Ez5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2641" y="493"/>
+            <point key="canvasLocation" x="2640.8000000000002" y="492.50374812593708"/>
+        </scene>
+        <!--Session Table View Controller-->
+        <scene sceneID="NrQ-gH-dEs">
+            <objects>
+                <tableViewController id="T14-9o-uFd" customClass="SessionTableViewController" customModule="Activity_Timekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bUs-KU-Ovn">
+                        <rect key="frame" x="0.0" y="0.0" width="240" height="329"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SessionCellIdentifier" textLabel="kKE-vc-v9X" style="IBUITableViewCellStyleDefault" id="HYr-Fw-hPV">
+                                <rect key="frame" x="0.0" y="28" width="240" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HYr-Fw-hPV" id="Eez-Xl-YKO">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kKE-vc-v9X">
+                                            <rect key="frame" x="16" y="0.0" width="208" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="T14-9o-uFd" id="6ue-Tp-Vff"/>
+                            <outlet property="delegate" destination="T14-9o-uFd" id="MtG-RI-zJp"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jq3-F1-hdU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2641" y="1214"/>
         </scene>
         <!--Session View Controller-->
         <scene sceneID="1bA-8V-a1I">

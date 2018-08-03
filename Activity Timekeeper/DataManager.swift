@@ -11,9 +11,18 @@ import Foundation
 struct DataManager {
     
     let documentsDirectory = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first!
-    static let shared = DataManager()
+    static var shared = DataManager()
+    var activities: [Activity]
     
-    func saveActivities (activities: [Activity]) {
+    init () {
+        activities = Activity.sampleActivities
+        
+        if let loadedActivities = loadActivities() {
+            activities = loadedActivities
+        }
+    }
+    
+    func saveActivities () {
         let activityURL = documentsDirectory.appendingPathComponent("activities")
         NSKeyedArchiver.archiveRootObject(activities, toFile: activityURL.path)
     }
