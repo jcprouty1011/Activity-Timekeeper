@@ -23,9 +23,11 @@ class SessionViewController: UIViewController {
     @IBOutlet weak var timerLabel: UILabel!
     @IBOutlet weak var startPauseButton: UIButton!
     @IBOutlet weak var saveSessionButton: UIButton!
+    @IBOutlet weak var cancelSessionButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        saveSessionButton.isEnabled = false
         activityLabel.text = "Activity: \(activity.name)"
 
         // Do any additional setup after loading the view.
@@ -41,6 +43,7 @@ class SessionViewController: UIViewController {
         if !isTimerRunning {
             if startTime == nil {
                 startTime = Date()
+                saveSessionButton.isEnabled = true
             } else {
                 let resumedAt = Date()
                 pauseTimes.append((resumedAt, pausedAt))
@@ -71,8 +74,37 @@ class SessionViewController: UIViewController {
     }
     
     @IBAction func saveButtonTapped(_ sender: Any) {
+        if isTimerRunning {
+            isTimerRunning = false
+            pausedAt = Date()
+            timer.invalidate()
+        }
+        let alert = UIAlertController(title: "Save", message: "Would you like to finish and save this session?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Save", style: .default, handler: { action in
+            self.endTime = self.pausedAt
+            let session = Session(startTime: self.startTime, endTime: self.endTime, pausePeriods: self.pauseTimes, notes: "")
+            self.activity.sessionList.append(session)
+            self.performSegue(withIdentifier: "SessionToActivityDetail", sender: nil)
+        } ))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func cancelSessionButtonTapped(_ sender: Any) {
+        if isTimerRunning {
+            isTimerRunning = false
+            pausedAt = Date()
+            timer.invalidate()
+        }
+        let alert = UIAlertController(title: "Cancel", message: "Would you like to abort this session? The session will not be saved.", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+            self.performSegue(withIdentifier: "SessionToActivityDetail", sender: nil)
+        } ))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        
+        present(alert, animated: true, completion: nil)
+    }
     
     
     // MARK: - Navigation

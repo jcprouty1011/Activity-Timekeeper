@@ -206,6 +206,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-lx-KYS">
+                                <rect key="frame" x="147" y="413" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start/Pause"/>
+                                <connections>
+                                    <action selector="startPauseButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="KuS-zb-TMq"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0h-pD-rfd">
                                 <rect key="frame" x="142" y="451" width="91" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -214,12 +222,12 @@
                                     <action selector="saveButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="6Wf-jO-U1q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-lx-KYS">
-                                <rect key="frame" x="147" y="394" width="80" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXR-fi-lcm">
+                                <rect key="frame" x="163" y="489" width="48" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start/Pause"/>
+                                <state key="normal" title="Cancel"/>
                                 <connections>
-                                    <action selector="startPauseButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="KuS-zb-TMq"/>
+                                    <action selector="cancelSessionButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="8wU-zT-ArH"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -236,12 +244,15 @@
                     </view>
                     <connections>
                         <outlet property="activityLabel" destination="DXE-xL-sZV" id="fOD-vl-rpm"/>
+                        <outlet property="cancelSessionButton" destination="rXR-fi-lcm" id="b9C-lE-FGr"/>
                         <outlet property="saveSessionButton" destination="y0h-pD-rfd" id="kyA-CS-poT"/>
                         <outlet property="startPauseButton" destination="fcy-lx-KYS" id="ykL-R7-ENo"/>
                         <outlet property="timerLabel" destination="UOs-C7-zfl" id="gHC-km-hZX"/>
+                        <segue destination="Blo-zh-6ia" kind="unwind" identifier="SessionToActivityDetail" unwindAction="unwindToActivityDetailWithSegue:" id="o88-C6-S4h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B0y-Il-HOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Blo-zh-6ia" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="3580" y="493"/>
         </scene>

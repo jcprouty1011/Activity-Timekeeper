@@ -38,6 +38,10 @@ class ActivityDetailViewController: UIViewController {
             sessionViewController.activity = activity
         }
     }
+    
+    @IBAction func unwindToActivityDetail(segue: UIStoryboardSegue) {
+        
+    }
  
 
 }

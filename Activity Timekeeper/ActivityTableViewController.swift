@@ -64,10 +64,17 @@ class ActivityTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            // Delete the row from the data source
-            activities.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .fade)
-            DataManager.shared.saveActivities(activities: activities)
+            let alert = UIAlertController(title: "Delete Activity", message: "Would you like to delete \(self.activities[indexPath.row].name)? You will lose all data associated with this activity.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Delete", style: .default, handler: { action in
+                self.activities.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+                DataManager.shared.saveActivities(activities: self.activities)
+            } ))
+            alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+            
+            present(alert, animated: true, completion: nil)
+            
+            
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
