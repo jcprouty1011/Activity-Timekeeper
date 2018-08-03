@@ -158,12 +158,22 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byL-uJ-2W0">
+                                <rect key="frame" x="0.0" y="645" width="375" height="30"/>
+                                <state key="normal" title="New Session"/>
+                                <connections>
+                                    <segue destination="UzB-XU-9HG" kind="presentation" identifier="ActivityDetailToSessionSegue" id="LsN-PS-IWM"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="uT3-l0-ZaU" firstAttribute="top" secondItem="LsX-3s-00J" secondAttribute="top" constant="8" id="AoC-bH-E9c"/>
+                            <constraint firstItem="byL-uJ-2W0" firstAttribute="bottom" secondItem="LsX-3s-00J" secondAttribute="bottom" constant="8" id="FW5-XC-XbJ"/>
                             <constraint firstItem="uT3-l0-ZaU" firstAttribute="leading" secondItem="LsX-3s-00J" secondAttribute="leading" id="Hf5-PF-Fl5"/>
                             <constraint firstItem="LsX-3s-00J" firstAttribute="trailing" secondItem="uT3-l0-ZaU" secondAttribute="trailing" id="Qcx-Jv-IsJ"/>
+                            <constraint firstItem="LsX-3s-00J" firstAttribute="trailing" secondItem="byL-uJ-2W0" secondAttribute="trailing" id="Xcc-de-7KN"/>
+                            <constraint firstItem="byL-uJ-2W0" firstAttribute="leading" secondItem="LsX-3s-00J" secondAttribute="leading" id="pCn-6s-de8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LsX-3s-00J"/>
                     </view>
@@ -175,6 +185,65 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAv-7S-Ez5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2641" y="493"/>
+        </scene>
+        <!--Session View Controller-->
+        <scene sceneID="1bA-8V-a1I">
+            <objects>
+                <viewController id="UzB-XU-9HG" customClass="SessionViewController" customModule="Activity_Timekeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Kwp-YW-Pe1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Activity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXE-xL-sZV">
+                                <rect key="frame" x="0.0" y="28" width="375" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TIMER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UOs-C7-zfl">
+                                <rect key="frame" x="0.0" y="306.5" width="375" height="54.5"/>
+                                <fontDescription key="fontDescription" name="CourierNewPSMT" family="Courier New" pointSize="48"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0h-pD-rfd">
+                                <rect key="frame" x="142" y="451" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save Session"/>
+                                <connections>
+                                    <action selector="saveButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="6Wf-jO-U1q"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-lx-KYS">
+                                <rect key="frame" x="147" y="394" width="80" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start/Pause"/>
+                                <connections>
+                                    <action selector="startPauseButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="KuS-zb-TMq"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DXE-xL-sZV" firstAttribute="leading" secondItem="Ni6-RV-19K" secondAttribute="leading" id="2qL-FS-zua"/>
+                            <constraint firstItem="UOs-C7-zfl" firstAttribute="centerY" secondItem="Kwp-YW-Pe1" secondAttribute="centerY" id="9IC-sZ-rKa"/>
+                            <constraint firstItem="Ni6-RV-19K" firstAttribute="trailing" secondItem="UOs-C7-zfl" secondAttribute="trailing" id="UmY-ro-oND"/>
+                            <constraint firstItem="UOs-C7-zfl" firstAttribute="leading" secondItem="Ni6-RV-19K" secondAttribute="leading" id="hhq-QT-QRS"/>
+                            <constraint firstItem="DXE-xL-sZV" firstAttribute="top" secondItem="Ni6-RV-19K" secondAttribute="top" constant="8" id="iqv-zn-vTH"/>
+                            <constraint firstItem="Ni6-RV-19K" firstAttribute="trailing" secondItem="DXE-xL-sZV" secondAttribute="trailing" id="z4S-bc-Wf9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Ni6-RV-19K"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityLabel" destination="DXE-xL-sZV" id="fOD-vl-rpm"/>
+                        <outlet property="saveSessionButton" destination="y0h-pD-rfd" id="kyA-CS-poT"/>
+                        <outlet property="startPauseButton" destination="fcy-lx-KYS" id="ykL-R7-ENo"/>
+                        <outlet property="timerLabel" destination="UOs-C7-zfl" id="gHC-km-hZX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B0y-Il-HOQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3580" y="493"/>
         </scene>
     </scenes>
 </document>
