@@ -250,25 +250,25 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-lx-KYS">
-                                <rect key="frame" x="147" y="413" width="80" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start/Pause"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fcy-lx-KYS" customClass="PlayPauseButton" customModule="Activity_Timekeeper" customModuleProvider="target">
+                                <rect key="frame" x="157" y="413.5" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="05s-Ti-psY"/>
+                                    <constraint firstAttribute="height" constant="60" id="45u-E9-dIe"/>
+                                </constraints>
                                 <connections>
                                     <action selector="startPauseButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="KuS-zb-TMq"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0h-pD-rfd">
-                                <rect key="frame" x="142" y="451" width="91" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y0h-pD-rfd">
+                                <rect key="frame" x="142" y="528.5" width="91" height="30"/>
                                 <state key="normal" title="Save Session"/>
                                 <connections>
                                     <action selector="saveButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="6Wf-jO-U1q"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXR-fi-lcm">
-                                <rect key="frame" x="163" y="489" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rXR-fi-lcm">
+                                <rect key="frame" x="163" y="578.5" width="48" height="30"/>
                                 <state key="normal" title="Cancel"/>
                                 <connections>
                                     <action selector="cancelSessionButtonTapped:" destination="UzB-XU-9HG" eventType="touchUpInside" id="8wU-zT-ArH"/>
@@ -277,11 +277,17 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="y0h-pD-rfd" firstAttribute="centerX" secondItem="Ni6-RV-19K" secondAttribute="centerX" id="2nc-Wq-OGG"/>
                             <constraint firstItem="DXE-xL-sZV" firstAttribute="leading" secondItem="Ni6-RV-19K" secondAttribute="leading" id="2qL-FS-zua"/>
+                            <constraint firstItem="fcy-lx-KYS" firstAttribute="centerY" secondItem="Ni6-RV-19K" secondAttribute="centerY" constant="100" id="5he-xj-mNM"/>
+                            <constraint firstItem="rXR-fi-lcm" firstAttribute="centerX" secondItem="Ni6-RV-19K" secondAttribute="centerX" id="7fG-gI-fhq"/>
                             <constraint firstItem="UOs-C7-zfl" firstAttribute="centerY" secondItem="Kwp-YW-Pe1" secondAttribute="centerY" id="9IC-sZ-rKa"/>
                             <constraint firstItem="Ni6-RV-19K" firstAttribute="trailing" secondItem="UOs-C7-zfl" secondAttribute="trailing" id="UmY-ro-oND"/>
                             <constraint firstItem="UOs-C7-zfl" firstAttribute="leading" secondItem="Ni6-RV-19K" secondAttribute="leading" id="hhq-QT-QRS"/>
+                            <constraint firstItem="y0h-pD-rfd" firstAttribute="centerY" secondItem="Ni6-RV-19K" secondAttribute="centerY" constant="200" id="i3N-6Z-ffB"/>
+                            <constraint firstItem="fcy-lx-KYS" firstAttribute="centerX" secondItem="Ni6-RV-19K" secondAttribute="centerX" id="ifI-bJ-pw7"/>
                             <constraint firstItem="DXE-xL-sZV" firstAttribute="top" secondItem="Ni6-RV-19K" secondAttribute="top" constant="8" id="iqv-zn-vTH"/>
+                            <constraint firstItem="rXR-fi-lcm" firstAttribute="centerY" secondItem="Ni6-RV-19K" secondAttribute="centerY" constant="250" id="of7-Ng-5zj"/>
                             <constraint firstItem="Ni6-RV-19K" firstAttribute="trailing" secondItem="DXE-xL-sZV" secondAttribute="trailing" id="z4S-bc-Wf9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ni6-RV-19K"/>

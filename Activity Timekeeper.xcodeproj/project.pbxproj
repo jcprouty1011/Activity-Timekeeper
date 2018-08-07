@@ -19,6 +19,7 @@
 		31B24083211390FF00596B89 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B24082211390FF00596B89 /* DataManager.swift */; };
 		31B2408521139D3D00596B89 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B2408421139D3D00596B89 /* SessionViewController.swift */; };
 		31B240872114C70F00596B89 /* SessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B240862114C70F00596B89 /* SessionTableViewController.swift */; };
+		31B2408A2119E24A00596B89 /* PlayPauseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B240892119E24A00596B89 /* PlayPauseButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		31B24082211390FF00596B89 /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		31B2408421139D3D00596B89 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 		31B240862114C70F00596B89 /* SessionTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewController.swift; sourceTree = "<group>"; };
+		31B240892119E24A00596B89 /* PlayPauseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		31B24065211226CF00596B89 /* Activity Timekeeper */ = {
 			isa = PBXGroup;
 			children = (
+				31B240882119E21700596B89 /* Buttons */,
 				31B2407821122E0D00596B89 /* Activity.swift */,
 				31B2408021123F8500596B89 /* ActivityDetailViewController.swift */,
 				31B2407C2112369D00596B89 /* ActivityTableViewController.swift */,
@@ -83,6 +86,14 @@
 				31B2406A211226CF00596B89 /* Main.storyboard */,
 			);
 			path = "Activity Timekeeper";
+			sourceTree = "<group>";
+		};
+		31B240882119E21700596B89 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				31B240892119E24A00596B89 /* PlayPauseButton.swift */,
+			);
+			path = Buttons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,6 +175,7 @@
 				31B2408121123F8500596B89 /* ActivityDetailViewController.swift in Sources */,
 				31B2407F211238FF00596B89 /* NewActivityViewController.swift in Sources */,
 				31B2407921122E0D00596B89 /* Activity.swift in Sources */,
+				31B2408A2119E24A00596B89 /* PlayPauseButton.swift in Sources */,
 				31B24067211226CF00596B89 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

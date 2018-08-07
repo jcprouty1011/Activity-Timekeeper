@@ -12,7 +12,12 @@ class SessionViewController: UIViewController {
     
     var activity: Activity!
     var timer = Timer()
-    var isTimerRunning = false
+    var isTimerRunning = false {
+        didSet {
+            startPauseButton.isPlaying = isTimerRunning
+            startPauseButton.setNeedsDisplay()
+        }
+    }
     var startTime: Date!
     var endTime: Date!
     var pausedAt: Date!
@@ -21,7 +26,7 @@ class SessionViewController: UIViewController {
 
     @IBOutlet weak var activityLabel: UILabel!
     @IBOutlet weak var timerLabel: UILabel!
-    @IBOutlet weak var startPauseButton: UIButton!
+    @IBOutlet weak var startPauseButton: PlayPauseButton!
     @IBOutlet weak var saveSessionButton: UIButton!
     @IBOutlet weak var cancelSessionButton: UIButton!
     
@@ -59,6 +64,7 @@ class SessionViewController: UIViewController {
         }
         
         isTimerRunning = !isTimerRunning
+        startPauseButton.isPlaying = isTimerRunning
     }
     
     static func makeTimerLabel(timeInterval: TimeInterval) -> String {
