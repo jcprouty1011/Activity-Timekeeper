@@ -11,6 +11,8 @@ import UIKit
 @IBDesignable class PlayPauseButton: UIButton {
     
     var isPlaying = false
+    @IBInspectable var buttonBaseColor: UIColor = .blue
+    @IBInspectable var buttonDetailColor: UIColor = .white
 
     private struct Constants {
         static let pauseLineWidth: CGFloat = 5.0
@@ -21,7 +23,7 @@ import UIKit
     // An empty implementation adversely affects performance during animation.
     override func draw(_ rect: CGRect) {
         let path = UIBezierPath(ovalIn: rect)
-        UIColor.blue.setFill()
+        buttonBaseColor.setFill()
         path.fill()
         
         let radius = min(bounds.width/2, bounds.height/2) * Constants.interiorScale
@@ -35,7 +37,7 @@ import UIKit
             trianglePath.addLine(to: CGPoint(x: bigRadius + radius, y: bigRadius))
             trianglePath.addLine(to: CGPoint(x: bigRadius - radius/2, y:bigRadius + radius * CGFloat(cos(Double.pi / 6))))
             
-            UIColor.white.setFill()
+            buttonDetailColor.setFill()
             trianglePath.fill()
         } else {
             let pausePath = UIBezierPath()
@@ -46,7 +48,7 @@ import UIKit
             pausePath.move(to: CGPoint(x: bigRadius + radius/3, y: bigRadius - radius * CGFloat(cos(Double.pi / 6))))
             pausePath.addLine(to: CGPoint(x: bigRadius + radius/3, y: bigRadius + radius * CGFloat(cos(Double.pi / 6))))
             
-            UIColor.white.setStroke()
+            buttonDetailColor.setStroke()
             pausePath.stroke()
         }
         

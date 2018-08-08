@@ -39,10 +39,13 @@ class SessionTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCellIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SessionCellIdentifier", for: indexPath) as! SessionPlotCell
 
         // Configure the cell...
-        cell.textLabel?.text = "Session: \(String(format: "%.1f",sessions[indexPath.row].lengthInSeconds)) seconds"
+        cell.sessionPlotView.setNeedsDisplay()
+        cell.sessionPlotView.session = sessions[indexPath.row]
+        cell.sessionPlotView.overallScale = sessions.map{$0.endTime.timeIntervalSince($0.startTime)}.max()
+        //cell.textLabel?.text = "Session: \(String(format: "%.1f",sessions[indexPath.row].lengthInSeconds)) seconds"
 
         return cell
     }
