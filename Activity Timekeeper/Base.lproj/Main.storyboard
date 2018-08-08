@@ -154,32 +154,62 @@
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ActivityLabel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uT3-l0-ZaU">
                                 <rect key="frame" x="0.0" y="72" width="375" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="vh0-rn-4do"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byL-uJ-2W0">
-                                <rect key="frame" x="0.0" y="645" width="375" height="30"/>
+                                <rect key="frame" x="0.0" y="629" width="375" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ihk-Rp-9Sq"/>
+                                </constraints>
                                 <state key="normal" title="New Session"/>
                                 <connections>
                                     <segue destination="UzB-XU-9HG" kind="presentation" identifier="ActivityDetailToSessionSegue" id="LsN-PS-IWM"/>
                                 </connections>
                             </button>
-                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-Mo-eok">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ouE-HX-3CU">
                                 <rect key="frame" x="67" y="101" width="240" height="329"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <connections>
-                                    <segue destination="T14-9o-uFd" kind="embed" identifier="EmbedSessionTable" id="5Ks-Ga-u8t"/>
-                                </connections>
-                            </containerView>
+                                <subviews>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LjY-Mo-eok">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="329"/>
+                                        <connections>
+                                            <segue destination="T14-9o-uFd" kind="embed" identifier="EmbedSessionTable" id="5Ks-Ga-u8t"/>
+                                        </connections>
+                                    </containerView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="AY4-MS-2MQ"/>
+                                    <constraint firstAttribute="height" constant="329" id="D2r-UO-cfS"/>
+                                    <constraint firstItem="LjY-Mo-eok" firstAttribute="top" secondItem="ouE-HX-3CU" secondAttribute="top" id="GMP-Pn-KPk"/>
+                                    <constraint firstAttribute="trailing" secondItem="LjY-Mo-eok" secondAttribute="trailing" id="TMp-dG-U8B"/>
+                                    <constraint firstAttribute="bottom" secondItem="LjY-Mo-eok" secondAttribute="bottom" id="V4i-FY-Qxa"/>
+                                    <constraint firstItem="LjY-Mo-eok" firstAttribute="leading" secondItem="ouE-HX-3CU" secondAttribute="leading" id="b1R-bw-Yq5"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Duq-hC-jOt" customClass="SessionGraphView" customModule="Activity_Timekeeper" customModuleProvider="target">
+                                <rect key="frame" x="67" y="450" width="240" height="159"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="UyI-fm-0Vo"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="ouE-HX-3CU" firstAttribute="top" secondItem="uT3-l0-ZaU" secondAttribute="bottom" constant="8" id="AeN-lT-n4G"/>
                             <constraint firstItem="uT3-l0-ZaU" firstAttribute="top" secondItem="LsX-3s-00J" secondAttribute="top" constant="8" id="AoC-bH-E9c"/>
-                            <constraint firstItem="byL-uJ-2W0" firstAttribute="bottom" secondItem="LsX-3s-00J" secondAttribute="bottom" constant="8" id="FW5-XC-XbJ"/>
+                            <constraint firstItem="byL-uJ-2W0" firstAttribute="bottom" secondItem="LsX-3s-00J" secondAttribute="bottom" constant="-8" id="FW5-XC-XbJ"/>
                             <constraint firstItem="uT3-l0-ZaU" firstAttribute="leading" secondItem="LsX-3s-00J" secondAttribute="leading" id="Hf5-PF-Fl5"/>
                             <constraint firstItem="LsX-3s-00J" firstAttribute="trailing" secondItem="uT3-l0-ZaU" secondAttribute="trailing" id="Qcx-Jv-IsJ"/>
                             <constraint firstItem="LsX-3s-00J" firstAttribute="trailing" secondItem="byL-uJ-2W0" secondAttribute="trailing" id="Xcc-de-7KN"/>
+                            <constraint firstItem="Duq-hC-jOt" firstAttribute="centerX" secondItem="lec-ht-PNn" secondAttribute="centerX" id="eJA-bD-xgd"/>
+                            <constraint firstItem="ouE-HX-3CU" firstAttribute="centerX" secondItem="lec-ht-PNn" secondAttribute="centerX" id="h0a-uS-yqC"/>
+                            <constraint firstItem="Duq-hC-jOt" firstAttribute="top" secondItem="ouE-HX-3CU" secondAttribute="bottom" constant="20" id="lkp-3i-yeW"/>
+                            <constraint firstItem="byL-uJ-2W0" firstAttribute="top" secondItem="Duq-hC-jOt" secondAttribute="bottom" constant="20" id="ndE-f4-8s6"/>
                             <constraint firstItem="byL-uJ-2W0" firstAttribute="leading" secondItem="LsX-3s-00J" secondAttribute="leading" id="pCn-6s-de8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="LsX-3s-00J"/>
@@ -187,6 +217,7 @@
                     <navigationItem key="navigationItem" title="Activity Information" id="z9g-PI-mkt"/>
                     <connections>
                         <outlet property="activityLabel" destination="uT3-l0-ZaU" id="Eax-MO-Hkm"/>
+                        <outlet property="sessionGraphView" destination="Duq-hC-jOt" id="JcE-an-752"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fAv-7S-Ez5" userLabel="First Responder" sceneMemberID="firstResponder"/>

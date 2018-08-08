@@ -104,13 +104,17 @@ class SessionViewController: UIViewController {
             pausedAt = Date()
             timer.invalidate()
         }
-        let alert = UIAlertController(title: "Cancel", message: "Would you like to abort this session? The session will not be saved.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
-            self.performSegue(withIdentifier: "SessionToActivityDetail", sender: nil)
-        } ))
-        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+        if startTime != nil {
+            let alert = UIAlertController(title: "Cancel", message: "Would you like to abort this session? The session will not be saved.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { action in
+                self.performSegue(withIdentifier: "SessionToActivityDetail", sender: nil)
+            } ))
+            alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
         
-        present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
+        } else {
+            performSegue(withIdentifier: "SessionToActivityDetail", sender: nil)
+        }
     }
     
     

@@ -13,10 +13,13 @@ class ActivityDetailViewController: UIViewController {
     var activity: Activity!
     var sessionTableViewController: SessionTableViewController!
     @IBOutlet weak var activityLabel: UILabel!
+    @IBOutlet weak var sessionGraphView: SessionGraphView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         activityLabel.text = activity.name
+        sessionGraphView.activity = activity
+        sessionGraphView.graphType = .cumulative
 
         // Do any additional setup after loading the view.
     }

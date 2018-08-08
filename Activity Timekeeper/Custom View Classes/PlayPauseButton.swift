@@ -8,7 +8,7 @@
 
 import UIKit
 
-@IBDesignable class PlayPauseButton: UIButton {
+class PlayPauseButton: UIButton {
     
     var isPlaying = false
     @IBInspectable var buttonBaseColor: UIColor = .blue

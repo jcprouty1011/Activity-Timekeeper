@@ -22,7 +22,6 @@ class SessionPlotView: UIView {
     override func draw(_ rect: CGRect) {
         let totalTime = session.endTime.timeIntervalSince(session.startTime)
         let pausePoints = session.pausePeriods.map{$0.start.timeIntervalSince(session.startTime)}
-        print(pausePoints)
         let pauseLengths = session.pausePeriods.map{$0.end.timeIntervalSince($0.start)}
         
         let rectPath = UIBezierPath(rect: CGRect(x: Constants.margins, y: Constants.margins, width: (CGFloat(totalTime / overallScale) * (rect.width - 2 * Constants.margins)), height: rect.height - 2 * Constants.margins))

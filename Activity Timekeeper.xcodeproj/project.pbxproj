@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		313388FE211A165F00CE3E98 /* SessionPlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313388FD211A165F00CE3E98 /* SessionPlotCell.swift */; };
 		31338900211A1DDB00CE3E98 /* SessionPlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313388FF211A1DDB00CE3E98 /* SessionPlotView.swift */; };
+		31338904211B338300CE3E98 /* SessionGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31338903211B338300CE3E98 /* SessionGraphView.swift */; };
 		31B24067211226CF00596B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B24066211226CF00596B89 /* AppDelegate.swift */; };
 		31B2406C211226CF00596B89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B2406A211226CF00596B89 /* Main.storyboard */; };
 		31B2406E211226D000596B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B2406D211226D000596B89 /* Assets.xcassets */; };
@@ -27,6 +28,7 @@
 /* Begin PBXFileReference section */
 		313388FD211A165F00CE3E98 /* SessionPlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPlotCell.swift; sourceTree = "<group>"; };
 		313388FF211A1DDB00CE3E98 /* SessionPlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPlotView.swift; sourceTree = "<group>"; };
+		31338903211B338300CE3E98 /* SessionGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionGraphView.swift; sourceTree = "<group>"; };
 		31B24063211226CF00596B89 /* Activity Timekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Activity Timekeeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31B24066211226CF00596B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31B2406B211226CF00596B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 				31B240892119E24A00596B89 /* PlayPauseButton.swift */,
 				313388FD211A165F00CE3E98 /* SessionPlotCell.swift */,
 				313388FF211A1DDB00CE3E98 /* SessionPlotView.swift */,
+				31338903211B338300CE3E98 /* SessionGraphView.swift */,
 			);
 			path = "Custom View Classes";
 			sourceTree = "<group>";
@@ -201,6 +204,7 @@
 				31B2407921122E0D00596B89 /* Activity.swift in Sources */,
 				31B2408A2119E24A00596B89 /* PlayPauseButton.swift in Sources */,
 				31B24067211226CF00596B89 /* AppDelegate.swift in Sources */,
+				31338904211B338300CE3E98 /* SessionGraphView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
