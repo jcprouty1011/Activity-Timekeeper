@@ -10,6 +10,7 @@
 		313388FE211A165F00CE3E98 /* SessionPlotCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313388FD211A165F00CE3E98 /* SessionPlotCell.swift */; };
 		31338900211A1DDB00CE3E98 /* SessionPlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 313388FF211A1DDB00CE3E98 /* SessionPlotView.swift */; };
 		31338904211B338300CE3E98 /* SessionGraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31338903211B338300CE3E98 /* SessionGraphView.swift */; };
+		3171F385211B4D7800AC5070 /* SessionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3171F384211B4D7800AC5070 /* SessionDetailViewController.swift */; };
 		31B24067211226CF00596B89 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31B24066211226CF00596B89 /* AppDelegate.swift */; };
 		31B2406C211226CF00596B89 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 31B2406A211226CF00596B89 /* Main.storyboard */; };
 		31B2406E211226D000596B89 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31B2406D211226D000596B89 /* Assets.xcassets */; };
@@ -29,6 +30,7 @@
 		313388FD211A165F00CE3E98 /* SessionPlotCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPlotCell.swift; sourceTree = "<group>"; };
 		313388FF211A1DDB00CE3E98 /* SessionPlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPlotView.swift; sourceTree = "<group>"; };
 		31338903211B338300CE3E98 /* SessionGraphView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionGraphView.swift; sourceTree = "<group>"; };
+		3171F384211B4D7800AC5070 /* SessionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailViewController.swift; sourceTree = "<group>"; };
 		31B24063211226CF00596B89 /* Activity Timekeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Activity Timekeeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		31B24066211226CF00596B89 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		31B2406B211226CF00596B89 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +67,7 @@
 				31B2407E211238FF00596B89 /* NewActivityViewController.swift */,
 				31B240862114C70F00596B89 /* SessionTableViewController.swift */,
 				31B2408421139D3D00596B89 /* SessionViewController.swift */,
+				3171F384211B4D7800AC5070 /* SessionDetailViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 			files = (
 				31B2407B21122E4C00596B89 /* Session.swift in Sources */,
 				31B2408521139D3D00596B89 /* SessionViewController.swift in Sources */,
+				3171F385211B4D7800AC5070 /* SessionDetailViewController.swift in Sources */,
 				31338900211A1DDB00CE3E98 /* SessionPlotView.swift in Sources */,
 				313388FE211A165F00CE3E98 /* SessionPlotCell.swift in Sources */,
 				31B240872114C70F00596B89 /* SessionTableViewController.swift in Sources */,

@@ -47,6 +47,26 @@ class Session: NSObject, NSCoding {
         aCoder.encode(pausePeriods, forKey: PropertyKeys.pausePeriods)
         aCoder.encode(notes, forKey: PropertyKeys.notes)
     }
+    
+    func bestUnit() -> TimeUnit {
+        if lengthInSeconds > 5400 {
+            return .hour
+        } else if lengthInSeconds > 90 {
+            return .minute
+        } else {
+            return .second
+        }
+    }
+    
+    func bestUnitRepresentation() -> Double {
+        if bestUnit() == .hour {
+            return lengthInSeconds/3600
+        } else if bestUnit() == .minute {
+            return lengthInSeconds/60
+        } else {
+            return lengthInSeconds
+        }
+    }
 }
 
 class DatePair: NSObject, NSCoding {
@@ -67,5 +87,15 @@ class DatePair: NSObject, NSCoding {
     func encode(with aCoder: NSCoder) {
         aCoder.encode(start, forKey: "start")
         aCoder.encode(end, forKey: "end")
+    }
+}
+
+enum TimeUnit: String {
+    case second
+    case minute
+    case hour
+    
+    func unitLabel() -> String {
+        return "\(self.rawValue)s"
     }
 }

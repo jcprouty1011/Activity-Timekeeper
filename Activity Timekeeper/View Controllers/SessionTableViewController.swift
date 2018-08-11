@@ -45,7 +45,7 @@ class SessionTableViewController: UITableViewController {
         cell.sessionPlotView.setNeedsDisplay()
         cell.sessionPlotView.session = sessions[indexPath.row]
         cell.sessionPlotView.overallScale = sessions.map{$0.endTime.timeIntervalSince($0.startTime)}.max()
-        //cell.textLabel?.text = "Session: \(String(format: "%.1f",sessions[indexPath.row].lengthInSeconds)) seconds"
+        cell.textLabel?.text = "Session: \(String(format: "%.1f",sessions[indexPath.row].bestUnitRepresentation())) \(sessions[indexPath.row].bestUnit().unitLabel())"
 
         return cell
     }
@@ -86,14 +86,18 @@ class SessionTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "SessionDetailSegue" {
+            let sessionDetailViewController = segue.destination as! SessionDetailViewController
+            sessionDetailViewController.session = sessions[tableView.indexPathForSelectedRow!.row]
+        }
     }
-    */
+    
 
 }

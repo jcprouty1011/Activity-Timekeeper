@@ -50,6 +50,7 @@ class ActivityDetailViewController: UIViewController {
     @IBAction func unwindToActivityDetail(segue: UIStoryboardSegue) {
         sessionTableViewController.sessions = activity.sessionList
         sessionTableViewController.tableView.reloadData()
+        sessionGraphView.setNeedsDisplay()
     }
  
 
